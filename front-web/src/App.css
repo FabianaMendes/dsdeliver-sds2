@@ -1,0 +1,27 @@
+/*Importando as fontes do google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap'); 
+
+/*Definindo os padrões de cor na raiz*/
+:root {
+  --primary-color: #da5c5c;
+  --primary-hover-color: #a74b4b;
+  --dark-color: #263238;
+  --secondary-color: #9E9E9E;
+  --light-color: #F5F5F5;
+}
+
+/*Retirando as margens padrão do html e body*/
+html, body {
+  margin: 0;
+  padding:0;
+}
+
+/*Definindo a fonte padrão para todo o corpo do App*/
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*Retirando os underlines e qualquer decoração dos textos dos links*/
+a {
+  text-decoration: none;
+}
