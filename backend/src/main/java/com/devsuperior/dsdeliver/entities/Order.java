@@ -36,7 +36,6 @@ public class Order implements Serializable{
 	private Set<Product> products = new HashSet<>();
 	
 	public Order() {
-		
 	}
 
 	public Order(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatus status) {
@@ -104,7 +103,7 @@ public class Order implements Serializable{
 		}
 		return sum;
 	}
-
+	
 	public Set<Product> getProducts() {
 		return products;
 	}
