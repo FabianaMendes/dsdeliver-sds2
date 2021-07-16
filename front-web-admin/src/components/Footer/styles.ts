@@ -6,14 +6,16 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
 
-    height: 65px;
+    min-height: 65px;
     background-color: ${props => props.theme.colors.black};
+    padding: 5px;
 `;
 
 export const FooterText = styled.p`
     color: ${props => props.theme.colors.white};
     font-size: 12px;
     margin-bottom: 10px;
+    text-align: center;
 `;
 
 export const MediaLinks = styled.div`
@@ -21,7 +23,12 @@ export const MediaLinks = styled.div`
     align-items: center;
     justify-content: center;
 
-    img {
+    a {
         margin: 0 3px;
+        transition: opacity .3s;
+    }
+
+    a:hover{
+        opacity: 0.6;
     }
 `;
