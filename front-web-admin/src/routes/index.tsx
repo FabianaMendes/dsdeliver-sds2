@@ -1,17 +1,18 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Login from "../pages/Login";
+import React from 'react';
+import { BrowserRouter } from "react-router-dom";
+import { useAuth } from '../hooks/auth';
 
+import PrivateRoutes from './private.routes';
+import PublicRoutes from './public.routes';
 
-function Routes() {
+const Routes: React.FC = () => {
+    const { logged } = useAuth();
+
     return (
         <BrowserRouter>
-            <Switch>
-                <Route path="/">
-                    <Login />
-                </Route>
-            </Switch>
+            { logged ? <PrivateRoutes/> : <PublicRoutes/> }
         </BrowserRouter>
     )
-}
+};
 
 export default Routes;
