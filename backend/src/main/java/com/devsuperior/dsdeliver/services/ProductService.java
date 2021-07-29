@@ -22,5 +22,12 @@ public class ProductService {
 		List<Product> list = repository.findAllByOrderByNameAsc();
 		return list.stream().map(x -> new ProductDTO(x)).collect(Collectors.toList());
 	}
+	
+	@Transactional
+	public ProductDTO insert(ProductDTO dto) {
+		Product product = new Product(null, dto.getName(), dto.getPrice(), dto.getDescription(), dto.getImageUri());
+		product = repository.save(product);
+		return new ProductDTO(product);
+	}
 
 }
