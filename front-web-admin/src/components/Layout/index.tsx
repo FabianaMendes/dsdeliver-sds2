@@ -4,7 +4,6 @@ import { Grid } from './styles';
 
 import Aside from '../Aside';
 import MainHeader from '../MainHeader';
-import Footer from '../Footer';
 import Content from '../Content';
 
 const Layout: React.FC = ({ children }) => (

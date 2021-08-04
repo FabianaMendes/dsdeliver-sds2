@@ -30,11 +30,11 @@ const Aside: React.FC = () => {
                     <IoReader />
                     Cardápio
                 </MenuLink>
-                <MenuLink href="/">
+                <MenuLink href="/pedidos">
                     <IoCartOutline />
                     Pedidos
                 </MenuLink>
-                <MenuLink href="/">
+                <MenuLink href="/faturamento">
                     <FaDollarSign />
                     Faturamento
                 </MenuLink>

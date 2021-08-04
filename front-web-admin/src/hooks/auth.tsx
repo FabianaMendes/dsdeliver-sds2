@@ -10,32 +10,36 @@ interface IAuthContext {
 const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
 const AuthProvider: React.FC = ({ children }) => {
-    const [user, setUser] = useState('');
-    const [logged, setLogged] = useState(false);
+    const [user, setUser] = useState<string>('');
+    const [logged, setLogged] = useState<boolean>(() => {
+        const isLogged = localStorage.getItem('@dsdelivery:logged');
+        return !!isLogged;
+    });
 
     useEffect(() => {
         const storagedUser = localStorage.getItem('@dsdelivery:user');
 
         if (storagedUser) {
             setUser(JSON.parse(storagedUser));
-            setLogged(true);
+        } else {
+            setUser('');
         }
     }, []);
 
     const login = (user:string, password:string) => {
         if(user !== '' && password !== '') {
             setLogged(true);
-            setUser(user);
             localStorage.setItem('@dsdelivery:user', JSON.stringify(user));
+            localStorage.setItem('@dsdelivery:logged', 'true');
         } else {
             alert('Digite um usuário e uma senha!')
         }
     };
 
     const logout = () => {
-        setUser('');
         setLogged(false);
         localStorage.removeItem('@dsdelivery:user');
+        localStorage.removeItem('@dsdelivery:logged');
     };
 
     return (
